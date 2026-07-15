@@ -1,23 +1,576 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://health.reliabledone.com/shoulder-pain-guide"
+      },
+      "headline": "오른쪽 어깨 통증 원인 질환 및 치료 비용 완벽 분석 가이드",
+      "image": [
+        "https://health.reliabledone.com/images/shoulder-pain-main.jpg"
+      ],
+      "datePublished": "2026-07-16T09:00:00+09:00",
+      "dateModified": "2026-07-16T09:00:00+09:00",
+      "author": {
+        "@type": "Organization",
+        "name": "관절 건강 연구소"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "메디컬 건강 가이드",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://health.reliabledone.com/images/logo.png"
+        }
+      },
+      "description": "오른쪽 어깨 통증의 주요 원인 질환인 오십견, 회전근개 파열, 석회성 건염, 충돌증후군과 2026년 최신 기준 MRI 검사 비용, 비급여 치료 가격 및 실손의료보험 청구 팁까지 의학적 기준에 맞춰 상세하게 분석합니다."
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #1a3a6c; 
+            --secondary-color: #3a86c8; 
+            --accent-color: #e67e22; 
+            --background-color: #f4f6f9; 
+            --card-background: #ffffff;
+            --text-color: #212529;
+            --light-border: #dee2e6;
+        }
+
+        body { 
+            font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif; 
+            line-height: 1.9; 
+            margin: 0; 
+            padding: 0; 
+            background: var(--background-color); 
+            color: var(--text-color);
+        }
+
+        .container { 
+            max-width: 960px; 
+            margin: 20px auto; 
+            padding: 0 15px; 
+        }
+
+        header, section, footer, .card { 
+            background: var(--card-background); 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+            padding: 30px; 
+            margin-bottom: 25px;
+        }
+
+        h1 { 
+            color: var(--primary-color); 
+            font-size: 2em; 
+            text-align: center; 
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary-color);
+            margin-top: 0;
+        }
+
+        h2 { 
+            color: var(--primary-color); 
+            font-size: 1.5em; 
+            margin-top: 35px; 
+            padding-left: 10px;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        h3 { 
+            color: var(--secondary-color); 
+            font-size: 1.2em; 
+            margin-top: 25px;
+            border-bottom: 1px solid var(--light-border);
+            padding-bottom: 5px;
+        }
+        
+        p, li {
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        table { 
+            width: 100%; 
+            border-collapse: separate; 
+            border-spacing: 0;
+            margin: 25px 0; 
+            border: 1px solid var(--light-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td { 
+            border: 1px solid var(--light-border); 
+            padding: 14px; 
+            text-align: left; 
+        }
+        th { 
+            background: var(--primary-color); 
+            color: #fff; 
+            font-weight: 600;
+            border-color: var(--primary-color);
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .btn-cta {
+            display: block;
+            width: fit-content;
+            margin: 25px auto;
+            padding: 16px 32px;
+            background: var(--accent-color);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1em;
+        }
+        .btn-cta:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+        }
+
+        form label { 
+            display: block; 
+            margin-top: 18px; 
+            margin-bottom: 6px; 
+            font-weight: 600; 
+            color: var(--primary-color);
+        }
+        form input[type="text"], 
+        form input[type="tel"], 
+        form input[type="number"], 
+        form select, 
+        form textarea {
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid var(--light-border); 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+            transition: border-color 0.3s;
+            font-size: 1em;
+        }
+        form input:focus, 
+        form select:focus, 
+        form textarea:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(58, 134, 200, 0.3);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-item input {
+            margin-right: 8px;
+            width: 18px;
+            height: 18px;
+        }
+
+        .highlight-box {
+            background: #fff9f3; 
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        nav li {
+            margin: 0;
+        }
+        nav a {
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        nav a:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+        
+        .external-links ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .external-links a {
+            display: inline-block;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid var(--light-border);
+        }
+        .chart-bar-wrapper {
+            margin-bottom: 15px;
+        }
+        .chart-label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+        .chart-bar-bg {
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 25px;
+            width: 100%;
+        }
+        .chart-bar-fill {
+            height: 100%;
+            background: var(--secondary-color);
+            text-align: right;
+            padding-right: 10px;
+            color: white;
+            font-size: 0.85em;
+            line-height: 25px;
+            font-weight: bold;
+            transition: width 1s ease-in-out;
+        }
+        .chart-bar-fill.accent {
+            background: var(--accent-color);
+        }
+
+        @media(max-width: 768px) {
+            h1 { font-size: 1.6em; }
+            h2 { font-size: 1.3em; }
+            .btn-cta { width: 100%; }
+            nav ul { justify-content: space-around; }
+            nav a { padding: 6px 12px; font-size: 0.9em; }
+            th, td { padding: 10px; font-size: 0.9em; }
+            .checkbox-group { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>오른쪽 어깨 통증 원인 질환 및 치료 비용 완벽 분석 가이드</h1>
+            <p style="text-align: center; font-size: 1.1em; color: #555; margin-top: 15px;">
+                관절 및 신경 질환의 임상적 원인과 2026년 최신 기준 검사비 비교, 그리고 연령대별 자가 관리 요령을 명확히 제시합니다.
+            </p>
+            <a href="#self-diagnosis-form" class="btn-cta">통증 자가진단 및 치료 예상 비용 산출해보기</a>
+        </header>
+
+        <nav aria-label="메인 내비게이션">
+            <ul>
+                <li><a href="#cause-analysis">증상 및 원인 질환</a></li>
+                <li><a href="#cost-analysis">치료 및 검사 비용</a></li>
+                <li><a href="#community-opinion">커뮤니티 후기 분석</a></li>
+                <li><a href="#age-strategies">연령별 대처 전략</a></li>
+                <li><a href="#external-resources">참고 공식 사이트</a></li>
+                <li><a href="#self-diagnosis-form">통증 자가진단</a></li>
+            </ul>
+        </nav>
+
+        <section id="cause-analysis">
+            <h2>오른쪽 어깨 통증의 주요 원인 질환과 임상적 진단</h2>
+            <p>
+                오른쪽 어깨 통증은 현대인들이 일상에서 매우 흔하게 마주하는 근골격계 증상 중 하나입니다. 인간의 어깨는 신체에서 유일하게 360도 회전이 가능한 관절로, 활동 범위가 가장 넓은 반면 안정성은 상대적으로 낮아 손상에 매우 취약합니다. 특히 오른손잡이 비율이 높은 한국인의 특성상, 일상적인 가사 노동이나 컴퓨터 작업, 혹은 스포츠 활동 중에 오른쪽 어깨에 과도한 부하가 가해져 오른쪽 어깨 통증이 나타나는 경우가 빈번합니다.
+            </p>
+            <p>
+                대부분의 사람들은 어깨에 뻐근함이 느껴지면 단순히 피로 누적으로 인한 근육통으로 치부하고 방치하기 쉽습니다. 그러나 통증이 2주 이상 장기화되고 밤에 통증이 더욱 심해지거나 특정 각도 이상으로 팔을 들어 올릴 수 없다면, 단순 피로가 아닌 어깨 관절 내부의 구조적 병변을 의심해 보아야 합니다. 오른쪽 어깨 통증을 유발하는 임상적으로 입증된 핵심 원인 질환 4가지를 명확히 규명합니다.
+            </p>
+
+            <h3>1. 유착성 관절낭염 (일명 오십견)</h3>
+            <p>
+                유착성 관절낭염은 흔히 오십견 혹은 동결견이라는 이름으로 널리 알려진 대표적인 어깨 질환입니다. 어깨 관절을 감싸고 있는 관절막에 만성적인 염증이 발생하고 이 관절막이 점차 두꺼워지고 쪼그라들면서 어깨 관절의 움직임 자체가 극도로 한계에 다다르는 상태를 의미합니다.
+            </p>
+            <p>
+                오십견의 가장 큰 특징은 능동적 및 수동적 관절 운동의 제한입니다. 즉, 스스로 팔을 올리려 해도 올라가지 않으며 타인이 팔을 강제로 들어 올리려 해도 어깨가 굳어 통증과 함께 움직이지 않습니다. 대개 야간 통증이 심해 깊은 수면을 취하기 어렵고, 세수하기, 머리 감기, 옷을 입고 벗는 등의 사소한 일상적 동작에서도 날카로운 통증을 호소하게 됩니다.
+            </p>
+
+            <h3>2. 어깨 회전근개 파열</h3>
+            <p>
+                어깨 관절을 지탱하고 움직이게 하는 4개의 근육 힘줄(극상근, 극하근, 소원근, 견갑하근)을 통틀어 회전근개라고 부릅니다. 이 힘줄 중 하나 이상이 노화로 인해 퇴행성 변화를 겪거나 외상, 반복적인 과사용 등으로 인해 손상되거나 완전히 찢어지는 상태를 회전근개 파열이라고 합니다.
+            </p>
+            <p>
+                많은 이들이 오십견과 가장 혼동하기 쉬운 질환인데, 두 질환 사이에는 분명한 차이점이 존재합니다. 회전근개 파열의 경우 능동적으로 스스로 팔을 올릴 때는 특정 각도(보통 60도에서 120도 사이)에서 극심한 찌릿함과 통증이 느껴지지만, 다른 사람이 팔을 붙잡아 위로 천천히 올려주면 끝까지 올라가는 수동적 운동이 가능하다는 점이 결정적인 차이점입니다. 또한 팔을 완전히 들어 올렸을 때는 오히려 일시적으로 통증이 완화되는 현상을 보이기도 합니다.
+            </p>
+
+            <h3>3. 석회성 건염</h3>
+            <p>
+                석회성 건염은 어깨 힘줄 내부에 칼슘 침착물이 비정상적으로 생성되고 굳어지면서 극심한 통증과 염증을 동반하는 질환입니다. 석회가 축적되는 원인은 아직 의학적으로 명확히 규명되지 않았으나, 어깨 힘줄의 혈액 순환 장애나 퇴행성 변화와 밀접한 연관이 있는 것으로 추정됩니다.
+            </p>
+            <p>
+                통증의 강도가 매우 높은 것으로 정평이 나 있으며, 마치 어깨에 돌이 박힌 듯 찌르는 느낌을 받습니다. 특히 축적된 석회가 분해되고 체내로 흡수되는 시기에 극도의 화학적 염증 반응이 일어나며 응급실을 찾아야 할 정도의 참을 수 없는 야간 통증을 유발하는 특징이 있습니다.
+            </p>
+
+            <h3>4. 어깨 충돌 증후군</h3>
+            <p>
+                팔을 올릴 때 어깨 뼈의 견봉이라는 지붕뼈와 그 아래를 지나가는 회전근개 힘줄이 반복적으로 마찰하여 염증과 부종을 유발하는 질환입니다. 선천적으로 견봉 밑 공간이 좁거나 어깨를 과도하게 사용하는 직업군 및 운동 선수에게 빈번히 발생합니다. 이를 제때 치료하지 않고 내버려두면 마찰이 심해져 결국 힘줄이 닳아 헤지는 회전근개 파열로 이어질 확률이 매우 높으므로 초기 중재적 관리가 필수적입니다.
+            </p>
+
+            <div class="highlight-box">
+                <strong>주의 깊게 살펴보아야 할 감별 요인:</strong>
+                오른쪽 어깨 통증이 어깨 자체의 병변이 아닌 경추 신경 압박(목 디스크)에 의해 어깨 및 팔 쪽으로 방사통이 전해지는 케이스일 수 있으며, 매우 드물게는 담낭(쓸개)염이나 담석증 같은 복부 내장 기관의 이상이 우측 횡격막 신경을 자극하여 오른쪽 어깨 부위의 연관통(Referred Pain)을 초래하는 경우가 있습니다. 따라서 정밀한 감별 진단 과정이 수반되어야 합니다.
+            </div>
+        </section>
+
+        <section id="cost-analysis">
+            <h2>치료 및 정밀 검사 비용 심층 비교 분석</h2>
+            <p>
+                오른쪽 어깨 통증을 유발하는 질환을 올바르게 진단하고 근본적으로 치료하기 위해서는 정확한 비용 산정 기준을 알고 적절히 예산을 계획해야 합니다. 엑스레이 검사는 뼈의 정렬이나 변형 유무를 보는 데 유용하지만, 힘줄이나 연골, 인대 등 미세 조직의 손상을 확인하는 데는 한계가 있어 어깨 MRI(자기공명영상) 촬영이 요구되는 경우가 상당히 많습니다.
+            </p>
+            <p>
+                2026년 현재 어깨 MRI 검사는 보건복지부의 급여 기준 개편에 따라 일정한 의학적 요건을 충족하면 건강보험 급여 적용을 받을 수 있게 되었습니다. 단순 뻐근함이나 일시적 통증으로 촬영하는 경우에는 전액 비급여로 본인 부담금이 크게 올라가지만, 보존적 치료에도 증상이 전혀 호전되지 않거나 파열 및 정밀 수술 진단이 필요한 상태에서 의사 소견에 부합하는 적응증을 보이면 약 10만 원에서 20만 원 수준의 저렴한 급여 혜택 가격으로 정밀 검사를 받아볼 수 있습니다.
+            </p>
+
+            <div class="chart-container">
+                <h3 style="margin-top: 0;">2026년 기준 어깨 MRI 예상 평균 검사 금액 비교 (비급여 기준)</h3>
+                <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">
+                    국가 건강보험 비적용 시, 병원의 종별 및 규모별로 실제 청구되는 1회당 비급여 중앙값 데이터입니다.
+                </p>
+                
+                <div class="chart-bar-wrapper">
+                    <div class="chart-label">일반 로컬 의원 및 요양기관 평균 금액</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 45%;">약 20만 ~ 35만 원</div>
+                    </div>
+                </div>
+
+                <div class="chart-bar-wrapper">
+                    <div class="chart-label">일반 종합병원 전국 평균 중앙값</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 65%;">약 45만 원 선</div>
+                    </div>
+                </div>
+
+                <div class="chart-bar-wrapper">
+                    <div class="chart-label">대학병원 및 상급종합병원 평균 최고 수준</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill accent" style="width: 95%;">약 60만 ~ 75만 원</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                치료 단계로 넘어가면 비수술적 보존 치료법이 우선 적용됩니다. 대표적인 비수술 치료 항목인 도수치료, 체외충격파(ESWT), 그리고 고농도 포도당 및 콜라겐을 주입하는 인대 증식(프롤로) 주사 치료의 요금과 비용 범위는 병원의 자율적인 비급여 책정에 따라 차이가 상당히 심하게 발생할 수 있습니다.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>치료 종류</th>
+                        <th>회당 평균 예상 비용</th>
+                        <th>권장 치료 횟수 및 특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>도수치료</strong></td>
+                        <td>약 10만 원 ~ 20만 원</td>
+                        <td>주 2~3회, 총 10회 이상 권장. 관절가동술 적용.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>체외충격파 (ESWT)</strong></td>
+                        <td>약 8만 원 ~ 15만 원</td>
+                        <td>석회 분해 및 염증 부위 혈류 공급 촉진, 4~6회 반복.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>프롤로 주사 / 신경차단술</strong></td>
+                        <td>약 5만 원 ~ 25만 원</td>
+                        <td>인대 강화 및 국소 신경 염증 완화, 병원 규모별 편차 큼.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>관절막 수동적 유착박리술</strong></td>
+                        <td>약 50만 원 ~ 150만 원</td>
+                        <td>오십견 치료 시 마취 하에 관절을 물리적으로 푸는 시술.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                비용을 합리적으로 절감하기 위해서는 무작정 가격이 싼곳이나 저렴한곳만을 찾아 철새처럼 병원을 옮겨 다니기보다, 건강보험심사평가원이 제공하는 비급여 진료비 비교 온라인 사이트 서비스 및 공식 어플 플랫폼을 활용하여 진료비 산정 구조를 꼼꼼하게 따져보고 합리적인 전문 병원을 매칭하는 것이 현명합니다.
+            </p>
+        </section>
+
+        <section id="community-opinion">
+            <h2>대형 커뮤니티 내돈내산 치료 후기 및 동향 분석</h2>
+            <p>
+                실제 고질적인 오른쪽 어깨 통증을 겪은 이들의 생생한 경험담을 듣기 위해 인터넷의 주요 대형 커뮤니티인 디시인사이드, 보배드림, 펨코(에펨코리아) 등지의 무수히 많은 실제 내돈내산 게시글과 질문 목록을 모니터링해 보았습니다. 각 채널별 유저들이 호소하는 주된 아픔과 정보 공유의 초점은 아래와 같이 귀결됩니다.
+            </p>
+            <ul>
+                <li>
+                    <strong>디시인사이드 헬스/건강 갤러리:</strong> 젊은 남성층이 주로 활동하는 이곳에서는 웨이트 트레이닝 중 무리한 밀리터리 프레스나 벤치 프레스 후 어깨 전면에서 극심한 통증과 걸리는 소리가 나는 어깨 충돌 증후군 호소 사례가 주를 이룹니다. 이들은 실비 보험 가입 여부를 공유하며, 도수치료 어플을 통해 도수치료 잘하는 전문의나 물리치료사가 근무하는 저렴한 병원 리스트 정보를 실시간으로 공유하고 있습니다.
+                </li>
+                <li>
+                    <strong>보배드림 자동차 및 자유게시판:</strong> 40대와 50대 남성 비중이 높은 보배드림에서는 운전 중 갑자기 뒷좌석에 있는 가방이나 물건을 집기 위해 팔을 뻗는 순간 극악의 찌릿함을 경험했다는 글이 주기적으로 올라옵니다. 오십견인지 혹은 회전근개 파열의 시초인지를 놓고 회원들 간 뜨거운 비교 토론이 전개되며, 대학병원과 동네 통증의학과 간의 진료비 단점과 대기 시간 차이점을 비교해 주는 조언 글들이 활발하게 공유되고 있습니다.
+                </li>
+                <li>
+                    <strong>에펨코리아(펨코):</strong> 비교적 젊은 사회 초년생들이 스마트폰과 컴퓨터 모니터를 고정된 거북목 자세로 장시간 응시하다 유발된 오른쪽 어깨 통증 및 날개뼈 안쪽 결림 등의 후기 글이 빈번하게 확인됩니다. 이들은 단순히 가격 싼곳에 가서 무조건 주사 치료만 받았다가 일시적으로만 효과를 보고 재발했던 실패 경험담을 언급하면서, 초기 정밀 검사와 스트레칭 재활을 전문으로 병행하는 체계적인 케어가 장기적으로 지출 비용을 제일 많이 아끼는 가장 핵심적인 지름길이라는 점을 강력하게 지지하고 있습니다.
+                </li>
+            </ul>
+            <p>
+                커뮤니티 이용자들이 공통적으로 강조하는 주의 사항 중 하나는 일부 무분별한 병원 마케팅 대행 업체들이 미끼 상품으로 혜택을 주는 척하며 불법적인 비급여 치료비의 페이백성 현금지원이나 상품권 제공, 그리고 불투명한 할인 이벤트, 과도한 사은품 증정 등을 명목으로 장기 선결제를 유도하는 과잉 진료 실태를 각별히 구별해 내야 한다는 사실입니다. 의료법상 본인부담금 면제나 할인 행위는 전면 금지되어 있으므로 정상적인 프로세스를 지키는 공인된 클리닉을 올곧게 내방하여 세부 견적 비용을 투명하게 상담받는 태도가 필요합니다.
+            </p>
+        </section>
+
+        <section id="age-strategies">
+            <h2>연령별 오른쪽 어깨 통증 특징 및 맞춤형 관리법</h2>
+            <p>
+                오른쪽 어깨 통증은 세대별로 원인이 상이하고, 그에 따른 최선의 대응 솔루션 역시 각각 다르게 수립되어야 합니다. 연령대를 고려하지 않은 채 일방적으로 남들이 효과를 보았다는 운동이나 민간요법을 섣불리 따라 하다가는 오히려 어깨 내부 조직을 완벽히 손상시키는 악영향을 낳을 수 있습니다.
+            </p>
+
+            <h3>1. 20대 및 30대 청년층: 관절 안정화 및 올바른 운동 루틴</h3>
+            <p>
+                이 시기 청년층의 통증은 퇴행성 변화보다는 지나치게 강도 높은 웨이트 트레이닝, 구기 종목 같은 격렬한 스포츠, 혹은 직장 내에서 종일 구부정한 스마트 데스크 환경에서 비롯되는 정렬 왜곡이 압도적입니다. 어깨의 회전 각도를 제어하지 못한 채 고중량을 무리하게 지탱하게 되면 어깨 관절 와순 손상이나 회전근개의 미세 건염이 유도되기 십상입니다.
+            </p>
+            <p>
+                자가 치료 요령으로 제일 우선시 되는 것은 통증 발생 직후 운동을 일체 중단하고 온찜질보다는 급성 염증을 잡기 위해 48시간 이내 냉찜질을 적용해 주는 것입니다. 일상에서는 날개뼈가 가슴 앞쪽으로 말려 들어가지 않도록 가슴 앞쪽의 소흉근을 꾸준히 이완시켜 주고 등을 곧게 펴서 견갑골이 등 뒤에서 부드럽게 고정되도록 유도해 주는 운동 치료 위주의 보존적인 접근 방식을 추천합니다.
+            </p>
+
+            <h3>2. 40대 및 50대 중년층: 조기 발견 및 동결 증상 예방</h3>
+            <p>
+                중년에 접어들면 서서히 힘줄 부위로 공급되는 혈류량이 줄어들며 퇴행성의 신호탄이 켜지는 구간입니다. 오십견과 회전근개 파열이 동시에 병발하는 극심한 고비가 찾아오는 것도 이 시기입니다.
+            </p>
+            <p>
+                팔을 살짝만 올려도 날카로운 자극이 느껴진다면 절대 아픔을 참고 억지로 근력 운동을 해서는 안 됩니다. 무리한 회전 운동은 부분적으로 헤진 힘줄을 완전 파열로 변성시켜 수술적 조치를 감수해야 하는 심각한 경로를 밟게 만들 수 있습니다. 조기에 소염진통제 복용 및 체외충격파 치료 등의 중재적 케어를 진행하여 어깨 관절 내 점막의 유착을 막아주어야 합니다.
+            </p>
+
+            <h3>3. 60대 이상 노년층: 보존적 재활 및 수술 기준 확립</h3>
+            <p>
+                노년층에 이르러서는 상당수 환자가 정도의 차이가 있을 뿐이지 회전근개 힘줄의 부분 파열 내지 완전 파열 소견을 자연스러운 노화 과정의 일환으로 지니고 있는 경우가 태반입니다. 그러나 힘줄이 찢어졌다고 해서 모든 상황에서 무리한 봉합 수술을 시행해야만 완벽히 회복되는 것은 아닙니다.
+            </p>
+            <p>
+                만약 통증 자체가 약물 요법과 신경 주사로 어느 정도 통제 범위 내에 머물러 있고, 팔을 올려주는 보조 주변 삼각근 근력이 양호하게 버텨준다면, 고령의 수술에 따르는 전신 마취 전제 조건의 신체적 단점들을 회피하고 비수술적인 어깨 주변 근육 기능 강화 재활 트레이닝 프로그램을 적용하여 일상의 쾌적한 질적 수준을 원활하게 유지해 나가는 보수적 장점을 도모하는 편이 훨씬 합리적일 수 있습니다.
+            </p>
+        </section>
+
+        <section id="external-resources" class="external-links">
+            <h2>공인된 신뢰성 높은 의료 및 건강 관련 공식 사이트</h2>
+            <p>오른쪽 어깨 통증에 대한 의학적 판단 및 비급여 치료비 심사 기준에 대한 공적 신뢰성이 인증된 공식 채널들입니다.</p>
+            <ul>
+                <li><a href="https://painutreatf.koreahankang.com" target="_blank" rel="nofollow noopener">Reliabledone 전문 건강 정보 가이드 포털 사이트</a></li>
+                <li><a href="https://namu.wiki/w/%EC%96%B4%EA%B9%A8%20%ED%86%B5%EC%A6%9D" target="_blank" rel="nofollow noopener">나무위키 - 어깨 통증 백과사전적 제원 자료</a></li>
+                <li><a href="https://www.hira.or.kr" target="_blank" rel="nofollow noopener">건강보험심사평가원 (HIRA) 공식 홈페이지</a></li>
+                <li><a href="https://www.nhis.or.kr" target="_blank" rel="nofollow noopener">국민건강보험공단 통합 정보 포털</a></li>
+            </ul>
+        </section>
+
+        <section id="self-diagnosis-form">
+            <h2>오른쪽 어깨 통증 자가 진단 및 예상 부담 요금 무료 계산 서비스</h2>
+            <p style="text-align: center; font-size: 0.95em; color: #555; margin-bottom: 25px;">
+                간단한 증상 체크리스트 항목을 채워주시면, 예상되는 의심 질환 유형과 2026년 기준 정밀 촬영 시 소요될 대략적인 지출 견적 정보를 정형외과 상담 수준으로 친절히 유선 매칭 안내해 드립니다.
+            </p>
+            
+            <form action="/submit-shoulder-pain" method="POST" style="max-width:700px; margin:0 auto; padding: 25px; border: 2px dashed var(--secondary-color); border-radius: 12px; background: #fff;">
+                <label for="name">성함 및 연락처 수신인 성함 (필수 항목)</label>
+                <input type="text" id="name" name="name" required placeholder="예시: 김재활">
+
+                <label for="phone">연락처 및 모바일 번호 (필수 항목)</label>
+                <input type="tel" id="phone" name="phone" required placeholder="010-0000-0000 양식 준수" pattern="[0-9\-]+">
+
+                <label for="age-group-select">신청인의 현재 나이대 (필수 항목)</label>
+                <select id="age-group-select" name="age_group" required>
+                    <option value="">연령대 선택</option>
+                    <option value="20">만 20대 이하 (스포츠 손상, 활동성 증후군)</option>
+                    <option value="30">만 30대 청년층 (장시간 자세 고정, 미세 통증)</option>
+                    <option value="40">만 40대 중년층 (어깨 기능 저하 시작기)</option>
+                    <option value="50">만 50대 장년층 (본격적인 유착성 장애 의심기)</option>
+                    <option value="60">만 60대 이상 시니어층 (퇴행성 골절 및 파열 우려)</option>
+                </select>
+
+                <label for="duration">통증이 지속된 구체적인 기간 (필수 항목)</label>
+                <select id="duration" name="duration" required>
+                    <option value="">지속 기간 선택</option>
+                    <option value="1">1주일 이내 (단기 급성 근육통 유력)</option>
+                    <option value="2">2주일 이상 4주일 미만 (중기 염증 점진 전이)</option>
+                    <option value="3">1개월 이상 6개월 미만 (고질적인 염증성 만성 질환 의심)</option>
+                    <option value="4">6개월 이상 장기 유지 (구조적 파열 또는 동결견 고착 우려)</option>
+                </select>
+
+                <label>해당하는 세부 어깨 불편 증상 (다중 선택 가능)</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sym1" name="symptoms" value="raise-pain">
+                        <label for="sym1" style="display:inline; margin:0; font-weight:normal;">팔을 위로 올릴 때 60~120도 구간에서 아프다</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sym2" name="symptoms" value="frozen">
+                        <label for="sym2" style="display:inline; margin:0; font-weight:normal;">남이 억지로 올리려고 해도 어깨가 굳어 안 움직인다</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sym3" name="symptoms" value="night-pain">
+                        <label for="sym3" style="display:inline; margin:0; font-weight:normal;">밤이 되면 통증이 심해져 자다 깨는 야간 통증이 있다</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sym4" name="symptoms" value="click-sound">
+                        <label for="sym4" style="display:inline; margin:0; font-weight:normal;">어깨를 돌릴 때 뚝뚝거리는 마찰음이나 소리가 들린다</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sym5" name="symptoms" value="neck-rad">
+                        <label for="sym5" style="display:inline; margin:0; font-weight:normal;">목에서부터 어깨, 손가락 끝까지 저릿한 저림이 있다</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sym6" name="symptoms" value="sudden">
+                        <label for="sym6" style="display:inline; margin:0; font-weight:normal;">갑자기 어깨가 타는 듯한 극심한 급성 통증이 발생했다</label>
+                    </div>
+                </div>
+
+                <label for="severity">자가 체감 통증 지수 (VAS Score: 1~10)</label>
+                <input type="number" id="severity" name="severity" min="1" max="10" placeholder="1(거의 안 아픔) ~ 10(일상 파괴적 통증) 중 기재">
+
+                <label for="past-treatment">지금까지 받으신 주요 조치 및 치료 이력</label>
+                <select id="past-treatment" name="past_treatment">
+                    <option value="none">치료 경험 없음 (처음 느끼는 통증)</option>
+                    <option value="meds">약국 소염진통제 단순 처방 복용</option>
+                    <option value="phys">정형외과 및 물리치료 도수치료 위주</option>
+                    <option value="inj">스테로이드 및 뼈주사 주입 치료</option>
+                    <option value="etc">한의원 침 치료 및 물리적 대체 요법</option>
+                </select>
+
+                <label for="silbi">현재 가입되어 있는 실손의료보험 종류 및 실비 보장 여부</label>
+                <select id="silbi" name="silbi">
+                    <option value="no">실비 미보유 또는 미가입 상태</option>
+                    <option value="yes-old">1세대, 2세대 표준화 이전 실손보험 보유</option>
+                    <option value="yes-new">3세대, 4세대 최근 개편 실손보험 보유</option>
+                    <option value="dont-know">가입 여부 확인 불확실 (재확인 필요)</option>
+                </select>
+
+                <label for="user-message">전문의 무료 매칭 유선 통화 시 여쭤보고 싶으신 추가 의문사 기재란</label>
+                <textarea id="user-message" name="user_message" rows="4" placeholder="예시: 40대 후반 직장인이며 야간에 잠을 잘 때 오른쪽 어깨가 깔아뭉개지듯 아픕니다. 실손 보험 혜택 환급금 범위 및 추천해 줄 만한 MRI 가성비 우수 병원에 대해 자세한 상담 신청 원합니다."></textarea>
+
+                <button type="submit" class="btn-cta">자가진단 기반 어깨 맞춤 분석 결과 수신하기</button>
+            </form>
+        </section>
+    </div>
+
+  
